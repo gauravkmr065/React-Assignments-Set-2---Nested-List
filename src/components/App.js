@@ -1,5 +1,6 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState,useEffect} from "react";
 import "./../styles/App.css";
+import City from './City';
 
 // Do not alter the states const and values inside it.
 const states = [
@@ -154,8 +155,20 @@ const states = [
   },
 ];
 
-function App() {
-  return <div id="main"></div>;
+function App({}) {
+  const [statesd,setStates] = useState(states);
+  const [showCity , setShowCity] = useState(true);
+  let i=1;
+  return  (
+  <div id="main">
+    <ul>
+        {statesd.map(state => {
+         return  <li onClick={()=>setShowCity(!showCity)} id={`state${i++}`} key={state.name}>{state.name}
+          {showCity &&  <City {...state} />}
+         </li>
+        })}
+    </ul>
+  </div>)
 }
 
 export default App;
