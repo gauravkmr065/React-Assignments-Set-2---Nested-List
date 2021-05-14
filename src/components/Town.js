@@ -5,7 +5,7 @@ function Town(city) {
     return (
          <ul>
                 {city.towns.map(town => {
-            return  <li id={`town${i++}`} key={town.name}>{town.name}
+            return  <li  id={`town${i++}`} key={town.name}>{town.name}
                 {/* <Town {...town} /> */}
             </li>
             })}

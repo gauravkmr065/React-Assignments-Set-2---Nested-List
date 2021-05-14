@@ -9,8 +9,8 @@ function City(state) {
     return (
           <ul>
                 {state.cities.map(city => {
-            return  <li onClick={()=>setTownShow(!townShow)} id={`city${i++}`} key={city.name}>{city.name}
-               {townShow&& <Town {...city} />}
+            return  <li  onClick={()=>setTownShow(!townShow)} id={`city${i++}`} key={city.name}>{city.name}
+                 {townShow && <Town {...city} />}
             </li>
             })}
           </ul>  

@@ -157,7 +157,7 @@ const states = [
 
 function App({}) {
   const [statesd,setStates] = useState(states);
-  const [showCity , setShowCity] = useState(true);
+  const [showCity , setShowCity] = useState(false);
   let i=1;
   return  (
   <div id="main">
