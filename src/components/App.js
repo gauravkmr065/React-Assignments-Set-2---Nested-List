@@ -157,18 +157,20 @@ const states = [
 
 function App({}) {
   const [statesd,setStates] = useState(states);
-  const [showCity , setShowCity] = useState(false);
+  const [showCity , setShowCity] = useState({});
   let i=1;
   return  (
   <div id="main">
     <ul>
-        {statesd.map(state => {
-         return  <li onClick={()=>setShowCity(!showCity)} id={`state${i++}`} key={state.name}>{state.name}
-          {showCity &&  <City {...state} />}
+        {statesd.map((state,index) => {
+         return  <li onClick={(event)=>{setShowCity(index+1)}}
+                     id={`state${index+1}`}
+                     key={state.name}>{state.name}
+            {showCity==(index+1) &&  <City {...state} />}
          </li>
         })}
-    </ul>
+      </ul>
   </div>)
-}
+}  
 
 export default App;
