@@ -163,10 +163,10 @@ function App({}) {
   <div id="main">
     <ul>
         {statesd.map((state,index) => {
-         return  <li onClick={(event)=>{setShowCity(!showCity),event.stopPropagation()}}
+         return  <li onClick={(event)=>{setShowCity(!showCity&&index+1),event.stopPropagation()}}
                      id={`state${index+1}`}
                      key={state.name}>{state.name}
-            {showCity &&  <City {...state} />}
+            {showCity==(index+1) &&  <City {...state} />}
          </li>
         })}
       </ul>

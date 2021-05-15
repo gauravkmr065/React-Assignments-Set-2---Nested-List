@@ -9,10 +9,10 @@ function City(state) {
     return (
           <ul>
                 {state.cities.map((city,index) => {
-            return  <li  onClick={(event)=>{setTownShow(!townShow),event.stopPropagation()}}
+            return  <li  onClick={(event)=>{setTownShow(!townShow&&index+1),event.stopPropagation()}}
                          id={`city${index+1}`} 
                          key={city.name}>{city.name}
-                 {townShow && <Town {...city} />}
+                 {townShow==(index+1) && <Town {...city} />}
             </li>
             })}
           </ul>  
